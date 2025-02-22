@@ -1,0 +1,29 @@
+{
+  "name": "LeetCode Todoist poster",
+  "description": "Create a todoist task from leetcode problem",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": "images/lctd.png"
+  },
+  "icons": {
+    "16": "images/lctd.png",
+    "48": "images/lctd.png",
+    "128": "images/lctd.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+  {
+    "matches": ["*://leetcode.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
